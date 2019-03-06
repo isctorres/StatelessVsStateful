@@ -1,15 +1,52 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+//void main() => runApp(WidgetSinEstado());
+void main() => runApp(WidgetConEstado());
 
-class MyApp extends StatelessWidget{
+class WidgetConEstado extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return WidgetWithState();
+  }
+}
+
+class WidgetWithState extends State<WidgetConEstado>{
+
+  int contador = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(),
+        body: Column(
+          children: <Widget>[
+            Text("Valor del Contador {$contador}"),
+            RaisedButton(
+              child: Text("Presiona"),
+              onPressed: (){
+                contador++;
+                print("El valor del contador es {$contador} ");
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+}
+
+
+/*class WidgetSinEstado extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
 
     int contador = 0;
 
-    // TODO: implement build
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(),
@@ -28,4 +65,5 @@ class MyApp extends StatelessWidget{
       ),
     );
   }
-}
+}*/
+
