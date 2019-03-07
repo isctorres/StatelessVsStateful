@@ -29,6 +29,9 @@ class WidgetWithState extends State<WidgetConEstado>{
               onPressed: (){
                 contador++;
                 print("El valor del contador es {$contador} ");
+                setState(() {
+
+                });
               },
             )
           ],
